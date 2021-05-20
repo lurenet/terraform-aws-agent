@@ -6,6 +6,6 @@ resource "local_file" "key_pem" {
 
 resource "local_file" "hosts" {
   filename = "/root/export/hosts"
-  content = "[local]\nlocalhost\n\n[build]\n${aws_instance.build.public_ip} ${var.export["host_options"]}\n\n[prod]\n${aws_instance.prod.public_ip} ${var.export["host_options"]}\n"
+  content = "[build]\n${aws_instance.build.public_ip} ${var.export["host_options"]}\n\n[prod]\n${aws_instance.prod.public_ip} ${var.export["host_options"]}\n"
   file_permission = "0644"
 }
