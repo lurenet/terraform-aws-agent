@@ -19,6 +19,7 @@ variable "ec2" {
 variable "export" {
   type = map
   default =  {
-    "host_options" = "ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/root/export/aws-private.pem ansible_ssh_extra_args='-o StrictHostKeyChecking=no'"
+    "host_options" = "ansible_ssh_user=ubuntu ansible_ssh_private_key_file=/root/export/aws-private.pem"
+    "app_name"     = "hello-1.0"
   }
 }

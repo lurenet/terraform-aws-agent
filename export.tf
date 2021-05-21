@@ -10,9 +10,9 @@ resource "local_file" "hosts" {
   file_permission = "0644"
 }
 
-resource "local_file" "prod" {
-  filename = "/root/export/prod"
-  content = "${aws_instance.prod.public_ip}"
+resource "local_file" "env_groovy" {
+  filename = "/root/export/env.groovy"
+  content = "env.BOXFUSE_IP=\"${aws_instance.prod.public_ip}\"\nenv.BOXFUSE_NAME=\"hello-1.0\"\n"
   file_permission = "0644"
 }
 
